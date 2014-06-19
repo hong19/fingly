@@ -6,4 +6,47 @@ router.get('/', function(req, res) {
   res.send('respond with a resource');
 });
 
+//
+router.get('/userlist', function(req, res){
+    var db = req.db; 
+    db.collection('userlist').find().toArray( function(err, items){
+        res.json(items);
+    })
+});
+
+router.get('/showprofile/:id', function(req, res){
+   var db = req.db; 
+   var userToShow = req.params.id;
+   db.collection('userlist').findById(userToShow, function(err, result){
+       res.json( result );
+   });
+});
+
+router.delete('/deleteuser/:id', function(req, res){
+   var db = req.db;
+   var userToDelete = req.params.id;
+   db.collection('userlist').removeById(userToDelete, function(err, result){
+       res.send((result === 1) ? { msg:'' } : { msg:"error" + err });
+   });
+});
+
+router.post('/adduser', function(req, res){
+    var db = req.db;
+    db.collection('userlist').insert(req.body, function(err, result){
+        res.send(
+            (err === null) ?　{ msg:'' } : { msg:err }
+        );
+    });
+});
+
+router.post('/updateuser', function(req, res){
+    var db = req.db;
+    var userToUpdate = req.body._id;
+    db.collection('userlist').updateById( userToUpdate, req.body, function(err){
+        res.send(
+            (err === null) ?　{ msg:'' } : { msg:err }
+        );
+    });
+});
+
 module.exports = router;
