@@ -2,6 +2,7 @@ $(document).ready(function(){
     
     showUserList();
     
+	//users
     $('#btnAddUser').on('click', addUser);
     
     $('#userList table tbody').on('click', 'td a.linkDeleteUser', deleteUser );
@@ -9,6 +10,9 @@ $(document).ready(function(){
 	$('#userList table tbody').on('click', 'td a.linkShowUserProfile', showUserProfile );
 	
 	$('#userList table tbody').on('click', 'td a.linkEditUser', updateUser );
+	
+	//tags
+	$('#btnAddTag').on('click', addTag);
 });
 
 function updateUser(event){
@@ -69,7 +73,7 @@ function showUserProfile(event){
 	 
 	 $.getJSON('/users/showprofile/' +  $(this).attr('rel'), function(data){
         var userListData = data;
-        
+        $('#showUserId').html( data._id );
 		$('#showUserName').html( data.name );
 		$('#showUserPhone').html( data.phone );
 		$('#showUserFacebook').html( data.facebook );

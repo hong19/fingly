@@ -9,7 +9,8 @@
     
     <!-- javascript -->
     <script src="/javascripts/apitest.js"></script>
-    
+    <script src="/javascripts/apitest_tags.js"></script>
+	
     <!-- css -->
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
@@ -25,6 +26,8 @@
         <button id="btnAddUser">Add</button>
     </div>
     
+	
+	
     <div id="userList">
         <table>
             <thead>
@@ -40,12 +43,22 @@
     
 	<div id="userProfile">
 		<h3>User Profile</h3>
+		<div id="showUserId"></div><br>
 		<div id="showUserName"></div><br>
 		<div id="showUserPhone"></div><br>
 		<div id="showUserFacebook"></div>
 	</div>
 	
-    <div id="debug"></div>
+	<div id="addTagForm">
+		
+        <input id="inputTagKey" type="text" placeholder="key">
+        <input id="inputTagValue" type="text" placeholder="value">
+        <button id="btnAddTag">Add</button>
+    </div>
+	
+    <div id="debug">
+	
+	</div>
 </body>
     
 </html>
