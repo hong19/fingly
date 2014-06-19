@@ -1,28 +1,37 @@
 $(document).ready(function(){
     
+    showUserList();
     
     $('#btnAddUser').on('click', addUser);
     
+    $('#userList table tbody').on('click', 'td a.linkDeleteUser', deleteUser );
     
 });
 
 function showUserList(){
     $.getJSON('/users/userlist', function(data){
         var userListData = data;
-        var content2Show;
+        var tableContent = "";
+        
         
         $.each(data, function(){
-            content2Show += this.name;
-            content2Show += '<br>';
+           tableContent += "<tr>";
+           tableContent += "<td>" + this.name + "</td>";
+           tableContent += "<td>" + this.phone + "</td>";
+           tableContent += "<td>" + this.facebook + "</td>";
+           tableContent += "<td><a href='#' class='linkShowUser' rel='" + this._id + "'>Details</a></td>";
+           tableContent += "<td><a href='#' class='linkEditUser' rel='" + this._id + "'>Edit</a></td>";
+           tableContent += "<td><a href='#' class='linkDeleteUser' rel='" + this._id + "'>Delete</a></td>";
+           tableContent += "</tr>";
         });
 	
-        $('#debug').html( content2Show );
+        $('#userList table tbody').html( tableContent );
     });
 }
 
-function addUser(){
+function addUser(event){
     event.preventDefault();
-    
+        
     var newUser = {
         'name': $("#addUserForm input#inputUserName").val(),
         'phone': $("#addUserForm input#inputUserPhone").val(),
@@ -47,3 +56,25 @@ function addUser(){
 	});
 }
 
+
+function deleteUser(event) {
+	event.preventDefault();
+	
+    $.ajax({
+        type: 'DELETE',
+        url: '/users/deleteuser/' + $(this).attr('rel')
+        
+    }).done(function(response){
+        if ( response.msg === '' ) {
+		
+		}else{
+			alert('Error ' + response.msg);
+		}
+        
+         showUserList();
+    });
+    
+	
+}
+	
+	
