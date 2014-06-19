@@ -42,7 +42,12 @@ router.post('/adduser', function(req, res){
 router.post('/updateuser', function(req, res){
     var db = req.db;
     var userToUpdate = req.body._id;
-    db.collection('userlist').updateById( userToUpdate, req.body, function(err){
+	var valueToSet = {
+		'name': req.body.name,
+		'phone': req.body.phone,
+		'facebook': req.body.facebook
+	}
+    db.collection('userlist').updateById( userToUpdate, valueToSet, function(err){
         res.send(
             (err === null) ?　{ msg:'' } : { msg:err }
         );
