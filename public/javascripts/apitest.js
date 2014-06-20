@@ -17,6 +17,9 @@ $(document).ready(function(){
 	$('#userList table tbody').on('click', 'td a.linkShowUserProfile', showUserTagList );
 	
 	$('#tagTimeLine table tbody').on('click', 'td a.linkDeleteTag', deleteTag );
+	
+	$('#tagTimeLine table tbody').on('click', 'td a.linkEditTag', updateTag );
+	
 });
 
 function updateUser(event){

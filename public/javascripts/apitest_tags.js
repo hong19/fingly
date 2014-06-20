@@ -12,7 +12,9 @@ function showUserTagList(){
            tableContent += "<tr>";
            tableContent += "<td>" + this.key + "</td>";
            tableContent += "<td>" + this.value + "</td>";
+            tableContent += "<td><a href='#' class='linkEditTag' rel='" + this._id + "'>Edit</a></td>";
            tableContent += "<td><a href='#' class='linkDeleteTag' rel='" + this._id + "'>Delete</a></td>";
+          
            tableContent += "</tr>";
         });
 	
@@ -49,6 +51,36 @@ function addTag(event){
 			alert('Error: ' + respnse.msg);
 		}
 		
+	});
+}
+
+function updateTag(event){
+	event.preventDefault();
+	
+	var tag2Update = {
+		'_id': $(this).attr('rel'),
+        'key': $("#addTagForm input#inputTagKey").val(),
+        'value': $("#addTagForm input#inputTagValue").val()
+    };
+	
+	$.ajax({
+		type: 'POST',
+		data: tag2Update,
+		url: '/tags/updatetag',
+		dataTye: 'JSON'
+	}).done(function(response){
+			
+		//Check for successful (blank) response
+		if ( response.msg === ''){
+			$('#debug').html("update tag success");
+			$("#addTagForm input#inputTagKey").val("");
+            $("#addTagForm input#inputTagValue").val("");
+       
+			//to do: show tag list
+		}else{
+			//If something goes wrong, alert the error message that our service returned 
+			alert('Error: ' + response.msg);
+		}
 	});
 }
 
