@@ -13,12 +13,16 @@ $(document).ready(function(){
 	
 	//tags
 	$('#btnAddTag').on('click', addTag);
+	
+	$('#userList table tbody').on('click', 'td a.linkShowUserProfile', showUserTagList );
+	
+	$('#tagTimeLine table tbody').on('click', 'td a.linkDeleteTag', deleteTag );
 });
 
 function updateUser(event){
 	event.preventDefault();
 	
-	var updateUser = {
+	var User2Update = {
 		'_id': $(this).attr('rel'),
         'name': $("#addUserForm input#inputUserName").val(),
         'phone': $("#addUserForm input#inputUserPhone").val(),
@@ -27,7 +31,7 @@ function updateUser(event){
 	
 	$.ajax({
 		type: 'POST',
-		data: updateUser,
+		data: User2Update,
 		url: '/users/updateuser',
 		dataTye: 'JSON'
 	}).done(function(response){
@@ -69,9 +73,9 @@ function showUserList(){
 }
 
 function showUserProfile(event){
-	 event.preventDefault();
-	 
-	 $.getJSON('/users/showprofile/' +  $(this).attr('rel'), function(data){
+    event.preventDefault();
+    
+    $.getJSON('/users/showprofile/' +  $(this).attr('rel'), function(data){
         var userListData = data;
         $('#showUserId').html( data._id );
 		$('#showUserName').html( data.name );
