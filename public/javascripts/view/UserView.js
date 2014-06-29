@@ -51,6 +51,33 @@ app.UserView = Backbone.View.extend({
         $('#showUserName').html(this.model.get("name"));
         $('#showUserPhone').html(this.model.get("phone"));
         $('#showUserFacebook').html(this.model.get("facebook"));
-	}
+		
+		//trigger the event of tagField
+		$('#tagField').trigger('userChange');
+	
+	
+		//not complete
+	    $.getJSON('/tags/usertaglist/' +  this.model.get("_id") , function(data){
+            var tagListData = data;
+            
+            $.each(data, function(){
+		
+			
+			//self.collection.add({ name:'honghong'});
+			
+			    _(tagListData).each(function(tag){
+				    self.collection.add(tag);
+			    }, this);
+			
+			//self.render();
+		    });      
+	    });
+	 
+	    
+	},
+	
+	
+	
+	
 		
 });
