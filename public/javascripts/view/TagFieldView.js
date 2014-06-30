@@ -9,10 +9,12 @@ app.TagFieldView = Backbone.View.extend({
 		this.model.bind('change', this.render);
 		
 		this.$el.on("userChange", this.changeUser);
+		this.$el.on("reload", this.render);
 		
 		this.tagList = new app.TagList();
 		this.tagListView = new app.TagListView(this.tagList);
 		this.addTagFormView = new app.AddTagFormView(this.tagList, this.model);
+		
 		
 	},
 	

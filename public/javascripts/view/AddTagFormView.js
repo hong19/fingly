@@ -40,7 +40,9 @@ app.AddTagFormView = Backbone.View.extend({
             if ( response.msg === ''){
                 $("#addTagForm input#inputTagKey").val("");
                 $("#addTagForm input#inputTagValue").val("");
-             
+				
+				//trigger the reload event let the tagList refresh
+				$('#tagField').trigger('reload');
             
             }else{
                 //If something goes wrong, alert the error message that our service returned 
