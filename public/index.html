@@ -6,73 +6,97 @@
     
     <!-- library -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    
-    <!-- javascript -->
-    <script src="/javascripts/apitest.js"></script>
-    <script src="/javascripts/apitest_tags.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"></script>
+  
 	
-    <!-- css -->
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- javascript -->
+    <script src="/javascripts/model/User.js"></script>
+	<script src="/javascripts/model/UserList.js"></script>
+	<script src="/javascripts/model/Tag.js"></script>
+	<script src="/javascripts/model/TagList.js"></script>
+	<script src="/javascripts/model/TagField.js"></script>
+	
+	<script src="/javascripts/view/UserView.js"></script>
+	<script src="/javascripts/view/UserListView.js"></script>
+	<script src="/javascripts/view/AddUserFormView.js"></script>
+	<script src="/javascripts/view/TagFieldView.js"></script>
+	<script src="/javascripts/view/TagListView.js"></script>
+	<script src="/javascripts/view/AddTagFormView.js"></script>
+	<script src="/javascripts/view/TagView.js"></script>
+	
+	<script src="/javascripts/app.js"></script>
+	
 </head>
 
 <body>
     
     <h1>fingly</h1>
     
-    <div id="addUserForm">
-        <input id="inputUserName" type="text" placeholder="Username">
-        <input id="inputUserPhone" type="text" placeholder="Phone">
-        <input id="inputUserFacebook" type="text" placeholder="Facebook">
-        <button id="btnAddUser">Add</button>
-    </div>
-    
+	<div id="userField">
 	
-	
-    <div id="userList">
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Details</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
-    
-	<div id="userProfile">
-		<h3>User Profile</h3>
-		<div id="showUserId"></div><br>
-		<div id="showUserName"></div><br>
-		<div id="showUserPhone"></div><br>
-		<div id="showUserFacebook"></div>
+		<div id="addUserForm">
+			<input id="inputUserName" type="text" placeholder="Username">
+			<input id="inputUserPhone" type="text" placeholder="Phone">
+			<input id="inputUserFacebook" type="text" placeholder="Facebook">
+			<button id="btnAddUser">Add</button>
+		</div>
+		
+		
+		
+		<div id="userList">
+		
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Details</th>
+						<th>Update</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			
+			
+		</div>
+		<div id="userProfile">
+			<h3>User Profile</h3>
+			_id: <div id="showUserId"></div><br>
+			name: <div id="showUserName"></div><br>
+			phone: <div id="showUserPhone"></div><br>
+			facebook: <div id="showUserFacebook"></div>
+		</div>
+		
 	</div>
 	
-	<div id="addTagForm">
+	<div id="tagField">
+	
+		<div id="addTagForm">
+			
+			<input id="inputTagKey" type="text" placeholder="key">
+			<input id="inputTagValue" type="text" placeholder="value">
+			<button id="btnAddTag">Add</button>
+		</div>
 		
-        <input id="inputTagKey" type="text" placeholder="key">
-        <input id="inputTagValue" type="text" placeholder="value">
-        <button id="btnAddTag">Add</button>
-    </div>
+		<div id="tagList">
+			<table>
+				<thead>
+					<tr>
+						<th>key</th>
+						<th>value</th>
+						<th>update</th>
+						<th>delete</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
     
-    <div id="tagTimeLine">
-        <table>
-            <thead>
-                <tr>
-                    <th>key</th>
-                    <th>value</th>
-                    <th>edit</th>
-                    <th>delete</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+  
     </div>
-    
 	
     <div id="debug">
 	
