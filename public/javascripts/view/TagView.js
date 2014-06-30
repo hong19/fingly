@@ -4,6 +4,7 @@ app.TagView = Backbone.View.extend({
 	tagName: 'tr',
 	
 	events: {
+		'click a.linkDeleteTag': 'remove'
 	},
 	
 	initialize: function(){
@@ -11,14 +12,15 @@ app.TagView = Backbone.View.extend({
 		
 		this.model.bind('change', this.render);
 		this.model.bind('remove', this.unrender);
+		
 	},
 
 	render: function(){
 		var innerHtml = "";
-		tableContent += "<td>" + this.model.get("key") + "</td>";
-        tableContent += "<td>" + this.model.get("value") + "</td>";
-        tableContent += "<td><a href='#' class='linkEditTag' rel='" + this.model.get("_id") + "'>Edit</a></td>";
-        tableContent += "<td><a href='#' class='linkDeleteTag' rel='" + this.model.get("_id") + "'>Delete</a></td>";
+		innerHtml += "<td>" + this.model.get("key") + "</td>";
+        innerHtml += "<td>" + this.model.get("value") + "</td>";
+        innerHtml += "<td><a href='#' class='linkEditTag' rel='" + this.model.get("_id") + "'>Edit</a></td>";
+        innerHtml += "<td><a href='#' class='linkDeleteTag' rel='" + this.model.get("_id") + "'>Delete</a></td>";
 		
 		$(this.el).html(innerHtml);
 

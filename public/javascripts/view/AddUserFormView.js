@@ -1,4 +1,3 @@
-
 var app = app || {};
 
 app.AddUserFormView = Backbone.View.extend({
@@ -50,7 +49,7 @@ app.AddUserFormView = Backbone.View.extend({
             
             }else{
                 //If something goes wrong, alert the error message that our service returned 
-                alert('Error: ' + respnse.msg);
+                alert('Error: ' + response.msg);
             }
             
         });

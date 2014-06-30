@@ -5,12 +5,16 @@ app.TagListView = Backbone.View.extend({
 	
 	initialize: function( tagList ){
 		var self = this;
-		_.bindAll(this, 'render', 'appendTag');
+		_.bindAll(this, 'render', 'appendTag', 'cleanAllTag');
+		
 		
 		this.collection = tagList;
+		console.log(tagList);
         this.collection.bind('add', this.appendTag);
+		//this.collection.bind('reset', this.cleanAllTag);
 		
 	},
+	
 	
 	render: function(){
 		var self = this;
@@ -25,7 +29,10 @@ app.TagListView = Backbone.View.extend({
 			model: tag
 		});
 		$('table tbody', this.el).append(tagView.render().el);
-	}
+	},
 	
+	cleanAllTag: function(){
+	
+	}
 });
 
