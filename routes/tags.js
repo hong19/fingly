@@ -17,9 +17,12 @@ router.get('/usertaglist/:id', function(req, res){
 router.post('/addtag', function(req, res){
     var db = req.db;
 	
-    db.collection('tagpool').insert( req.body, function(err){
+    db.collection('tagpool').insert( req.body, function(err , result){
         res.send(
-            (err === null) ? { msg:'' } : { msg:err }
+            { 
+				msg:(err === null) ? '' : err,
+				_id: result[0]._id
+			}
         );
     });
 });
@@ -36,9 +39,9 @@ router.delete('/deletetag/:id', function(req, res){
 });
 
 
-router.post('/updatetag', function(req, res){
+router.put('/updatetag/:id', function(req, res){
     var db = req.db;
-    var tagId = req.body._id;
+    var tagId = req.params._id;
 	var valueToSet = {
 		$set: {
 			'key': req.body.key,

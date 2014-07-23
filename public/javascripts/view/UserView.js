@@ -61,16 +61,15 @@ app.UserView = Backbone.View.extend({
 	updateUser: function(){
 		var self = this;
 		var user2Update = {
-			'_id': $('a.linkUpdateUser', this.$el).attr('rel'),
 			'name': $("#addUserForm input#inputUserName").val(),
 			'phone': $("#addUserForm input#inputUserPhone").val(),
 			'facebook': $("#addUserForm input#inputUserFacebook").val()
 		};
 		
 		$.ajax({
-			type: 'POST',
+			type: 'PUT',
 			data: user2Update,
-			url: '/users/updateuser',
+			url: '/users/updateuser/' +  this.model.get("_id"),
 			dataTye: 'JSON'
 		}).done(function(response){
 				

@@ -42,11 +42,10 @@ app.AddUserFormView = Backbone.View.extend({
                 $("input#inputUserFacebook").val("");
                 
                 var user = new app.User();
+				newUser._id = response._id;
                 user.set(newUser);
                 
-                self.collection.add(user);
-                //problem: _id => undefined
-            
+                self.collection.add(user);              
             }else{
                 //If something goes wrong, alert the error message that our service returned 
                 alert('Error: ' + response.msg);

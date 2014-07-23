@@ -42,7 +42,13 @@ app.AddTagFormView = Backbone.View.extend({
                 $("#addTagForm input#inputTagValue").val("");
 				
 				//trigger the reload event let the tagList refresh
-				$('#tagField').trigger('reload');
+				//$('#tagField').trigger('reload');
+				
+				var tag = new app.Tag();
+				newTag._id = response._id;
+                tag.set(newTag);
+				
+                self.collection.add(tag);   
             
             }else{
                 //If something goes wrong, alert the error message that our service returned 

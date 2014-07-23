@@ -33,15 +33,18 @@ router.delete('/deleteuser/:id', function(req, res){
 router.post('/adduser', function(req, res){
     var db = req.db;
     db.collection('userlist').insert(req.body, function(err, result){
-        res.send(
-            (err === null) ?　{ msg:'' } : { msg:err }
+		res.send(
+			{ 
+				msg:(err === null) ? '' : err,
+				_id: result[0]._id
+			}
         );
     });
 });
 
-router.post('/updateuser', function(req, res){
+router.put('/updateuser/:id', function(req, res){
     var db = req.db;
-    var userToUpdate = req.body._id;
+    var userToUpdate = req.params.id;
 	var valueToSet = {
 		'name': req.body.name,
 		'phone': req.body.phone,

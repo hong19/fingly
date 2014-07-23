@@ -50,15 +50,14 @@ app.TagView = Backbone.View.extend({
 	update: function(){
 		var self = this;
 		var tag2Update = {
-			'_id': $('a.linkUpdateTag', this.$el).attr('rel'),
 			'key': $("#addTagForm input#inputTagKey").val(),
 			'value': $("#addTagForm input#inputTagValue").val()
 		};
 	
 		$.ajax({
-			type: 'POST',
+			type: 'PUT',
 			data: tag2Update,
-			url: '/tags/updatetag',
+			url: '/tags/updatetag/' +  this.model.get("_id"),
 			dataTye: 'JSON'
 		}).done(function(response){
 				
