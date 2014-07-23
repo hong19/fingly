@@ -1,0 +1,38 @@
+@import "blueprint";
+
+#blueprintGrid{
+	@include container;
+	#header, #footer{
+		@include column(24);
+	}
+	#userField{
+		.leftSide{
+			/*@include column(0);*/
+		}
+		.midSide{
+			@include column(14);
+		
+	
+		}
+		.rightSide{
+			@include column(10, true);
+		}
+	}
+	
+	#tagField{
+		.leftSide{
+			/*@include column(0);*/
+		}
+		.midSide{
+			@include column(14);
+		}
+		.rightSide{
+			@include column(10, true);
+		}
+	}
+	
+	#footer{
+		@include column(24);
+	}
+
+}

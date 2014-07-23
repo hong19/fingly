@@ -1,0 +1,41 @@
+/* line 6, ../sass/test.scss */
+.two-col {
+  width: 390px;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
+  background-color: #cccccc;
+}
+/* line 9, ../sass/test.scss */
+.two-col #header, .two-col #footer {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 390px;
+}
+/* line 147, ../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .two-col #header, * html .two-col #footer {
+  overflow-x: hidden;
+}
+/* line 12, ../sass/test.scss */
+.two-col #sidebar {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 140px;
+}
+/* line 147, ../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .two-col #sidebar {
+  overflow-x: hidden;
+}
+/* line 15, ../sass/test.scss */
+.two-col #content {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 240px;
+}
+/* line 147, ../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .two-col #content {
+  overflow-x: hidden;
+}
