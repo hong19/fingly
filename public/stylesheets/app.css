@@ -1,16 +1,15 @@
 /* line 3, ../sass/app.scss */
 html, body {
-  width: 100%;
   font-family: 'Helvetica Neue', Helvetica, Arial;
   font-size: 20px;
 }
 
-/* line 9, ../sass/app.scss */
+/* line 8, ../sass/app.scss */
 #header {
   height: 100px;
   background: linear-gradient(to bottom, #27709b 0%, #24688f 100%);
 }
-/* line 14, ../sass/app.scss */
+/* line 13, ../sass/app.scss */
 #header #title {
   text-align: center;
   font-family: "Times New Roman";
@@ -18,34 +17,23 @@ html, body {
   color: white;
 }
 
-/* line 24, ../sass/app.scss */
+/* line 22, ../sass/app.scss */
 #userField {
-  height: 350px;
   background: #e3e3e3;
 }
-/* line 29, ../sass/app.scss */
-#userField .left_side {
-  float: left;
-  background: red;
-}
-/* line 34, ../sass/app.scss */
-#userField .mid_side {
-  float: left;
-}
-/* line 38, ../sass/app.scss */
-#userField .right_side {
-  float: left;
-}
 
-/* line 45, ../sass/app.scss */
+/* line 27, ../sass/app.scss */
 #tagField {
-  height: 350px;
   background: rgba(0, 0, 0, 0.15);
 }
 
-/* line 54, ../sass/app.scss */
+/* line 33, ../sass/app.scss */
+#addUserForm, #addTagForm {
+  background: #e3e3e3;
+}
+/* line 36, ../sass/app.scss */
 #addUserForm input, #addTagForm input {
-  padding: 15px 100px 14px 56px;
+  padding: 15px 15px 14px 56px;
   border: none;
   border-top: 1px solid #cdccc2;
   border-left: 1px solid #cdccc2;
@@ -56,7 +44,7 @@ html, body {
   border-radius: 5px;
   font-size: 20px;
 }
-/* line 65, ../sass/app.scss */
+/* line 47, ../sass/app.scss */
 #addUserForm button, #addTagForm button {
   border-radius: 13px;
   background-color: #FFCC33;
@@ -65,7 +53,7 @@ html, body {
   cursor: pointer;
 }
 
-/* line 79, ../sass/app.scss */
+/* line 61, ../sass/app.scss */
 #userList table, #tagList table {
   margin: 0 0 40px 0;
   width: 100%;
@@ -73,48 +61,54 @@ html, body {
   display: table;
 }
 @media screen and (max-width: 580px) {
-  /* line 79, ../sass/app.scss */
+  /* line 61, ../sass/app.scss */
   #userList table, #tagList table {
     display: block;
   }
 }
-/* line 91, ../sass/app.scss */
+/* line 73, ../sass/app.scss */
 #userList table tbody tr, #tagList table tbody tr {
   display: table-row;
   background: #f6f6f6;
 }
-/* line 94, ../sass/app.scss */
+/* line 76, ../sass/app.scss */
 #userList table tbody tr:nth-of-type(odd), #tagList table tbody tr:nth-of-type(odd) {
   background: #e9e9e9;
 }
 @media screen and (max-width: 580px) {
-  /* line 91, ../sass/app.scss */
+  /* line 73, ../sass/app.scss */
   #userList table tbody tr, #tagList table tbody tr {
     padding: 8px 0;
     display: block;
   }
 }
-/* line 104, ../sass/app.scss */
+/* line 86, ../sass/app.scss */
 #userList table thead, #tagList table thead {
   font-weight: 900;
   color: #ffffff;
 }
-/* line 107, ../sass/app.scss */
+/* line 89, ../sass/app.scss */
 #userList table thead tr, #tagList table thead tr {
   background: #27ae60;
 }
 
-/* line 115, ../sass/app.scss */
+/* line 97, ../sass/app.scss */
 #userProfile {
+  background: #e3e3e3;
   font-family: "Microsoft JhengHei";
 }
-/* line 117, ../sass/app.scss */
+/* line 100, ../sass/app.scss */
 #userProfile h3 {
   font-size: 32px;
   color: #ea6153;
 }
-/* line 123, ../sass/app.scss */
+/* line 106, ../sass/app.scss */
 #userProfile .profile_label {
   font-size: 24px;
   color: #0000CC;
+}
+
+/* line 111, ../sass/app.scss */
+#footer {
+  background: linear-gradient(to bottom, #27709b 0%, #24688f 100%);
 }

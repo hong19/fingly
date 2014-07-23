@@ -12,6 +12,8 @@
     <!-- css -->
     <link rel="stylesheet" href="stylesheets/screen.css" type="text/css" media="screen, projection">
     <link rel="stylesheet" href="stylesheets/app.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="stylesheets/layout.css" type="text/css" media="screen, projection">
+	
 	
     <!-- javascript -->
     <script src="/javascripts/model/User.js"></script>
@@ -33,7 +35,8 @@
 </head>
 
 <body>
-    
+
+<div id="blueprintGrid">
     <div id="header"> 
         <div id="title">
             <h1>fingly</h1>
@@ -41,9 +44,9 @@
     </div>
     
 	<div id="userField">
-	    <div class="left_side"></div>
+	    <div class="leftSide"></div>
 	    
-	    <div class="mid_side">
+	    <div class="midSide">
     		<div id="addUserForm">
     			<input id="inputUserName" type="text" placeholder="Username">
     			<input id="inputUserPhone" type="text" placeholder="Phone">
@@ -72,7 +75,7 @@
     		</div>
     	</div>
     	
-    	<div class="right_side">
+    	<div class="rightSide">
     		<div id="userProfile">
     			<h3>User Profile</h3>
     			_id: <div id="showUserId" class="profile_label"></div><br>
@@ -85,9 +88,9 @@
 	</div>
 	
 	<div id="tagField">
-	    <div class="left_side">
+	    <div class="leftSide">
 	    </div>
-	    <div class="mid_side">
+	    <div class="midSide">
     		<div id="addTagForm">
     			
     			<input id="inputTagKey" type="text" placeholder="key">
@@ -111,13 +114,15 @@
     		</div>
     	</div>
     
-        <div class="right_side">
+        <div class="rightSide">
         </div>
     </div>
 	
-    <div id="debug">
+	<div id="footer">
+		<div id="debug"></div>'
 	</div>
 	
+</div>
 </body>
     
 </html>

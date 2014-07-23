@@ -1,7 +1,6 @@
 @import "compass/css3";
 
 html,body{
-    width:100%;
     font-family: 'Helvetica Neue', Helvetica, Arial;
     font-size:20px;
 }
@@ -12,8 +11,7 @@ html,body{
    
     
     #title{
-        text-align:center;
-        
+        text-align:center;     
         font-family: "Times New Roman";
         font-size: 80px;
         color:white;
@@ -22,37 +20,21 @@ html,body{
 }
 
 #userField{
-    height:350px;
-    
     background:#e3e3e3;
-    
-    .left_side{
-         float:left;    
-         background: red;
-    }
-    
-    .mid_side{
-         float:left;
-    }
-    
-    .right_side{
-         float:left;
-    
-    }
     
 }
 
 #tagField{
-    height:350px;
     
     background:rgba(0,0,0,.15);
     
 }
 
 #addUserForm , #addTagForm{
-    
+    background:#e3e3e3;
+	
     input{
-        padding: 15px 100px 14px 56px;
+        padding: 15px 15px 14px 56px;
         
         border: none;
         border-top: 1px solid #cdccc2;
@@ -75,7 +57,7 @@ html,body{
 }
 
 #userList, #tagList{
-    
+     
     table{
         margin: 0 0 40px 0;
         width: 100%;
@@ -113,6 +95,7 @@ html,body{
 }
 $user_font_size: 32px;
 #userProfile{
+	background:#e3e3e3;
     font-family:  "Microsoft JhengHei";
     h3{
         font-size:$user_font_size;
@@ -124,4 +107,7 @@ $user_font_size: 32px;
         font-size:24px;
         color:#0000CC;
     }
+}
+#footer{
+	background:linear-gradient(to bottom,#27709b 0,#24688f 100%);
 }
