@@ -57,46 +57,7 @@ a img {
   border: none;
 }
 
-/* line 76, ../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/blueprint/stylesheets/blueprint/_fancy-type.scss */
-body p + p {
-  text-indent: 2em;
-  margin-top: -1.5em;
-  /* Don't want this in forms. */
-}
-/* line 86, ../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/blueprint/stylesheets/blueprint/_fancy-type.scss */
-form body p + p {
-  text-indent: 0;
-}
-/* line 78, ../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/blueprint/stylesheets/blueprint/_fancy-type.scss */
-body p.incr,
-body .incr p {
-  font-size: 0.83333em;
-  line-height: 1.44em;
-  margin-bottom: 1.5em;
-}
-/* line 13, ../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/blueprint/stylesheets/blueprint/_fancy-type.scss */
-body .caps {
-  font-variant: small-caps;
-  letter-spacing: 1px;
-  text-transform: lowercase;
-  font-size: 1.2em;
-  line-height: 1%;
-  font-weight: bold;
-  padding: 0 2px;
-}
-/* line 14, ../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/blueprint/stylesheets/blueprint/_fancy-type.scss */
-body .dquo {
-  margin-left: -0.5em;
-}
-/* line 15, ../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.6/frameworks/blueprint/stylesheets/blueprint/_fancy-type.scss */
-body .alt {
-  color: #666666;
-  font-family: "Warnock Pro", "Goudy Old Style", "Palatino", "Book Antiqua", Georgia, serif;
-  font-style: italic;
-  font-weight: normal;
-}
-
-/* line 30, ../sass/screen.scss */
+/* line 20, ../sass/screen.scss */
 body.bp {
   line-height: 1.5;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -531,14 +492,14 @@ form.bp form.inline p {
   margin-bottom: 0;
 }
 
-/* line 47, ../sass/screen.scss */
+/* line 37, ../sass/screen.scss */
 body.two-col #container {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 50, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 body.two-col #header, body.two-col #footer {
   display: inline;
   float: left;
@@ -549,7 +510,7 @@ body.two-col #header, body.two-col #footer {
 * html body.two-col #header, * html body.two-col #footer {
   overflow-x: hidden;
 }
-/* line 53, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 body.two-col #sidebar {
   display: inline;
   float: left;
@@ -560,7 +521,7 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 58, ../sass/screen.scss */
+/* line 48, ../sass/screen.scss */
 body.two-col #content {
   display: inline;
   float: left;
